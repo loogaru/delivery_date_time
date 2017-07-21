@@ -1,0 +1,1 @@
+<p>{__("loogaru_delivery_date")}: {$order_info.delivery_date|date_format:"%e %b (%A)"}</p>

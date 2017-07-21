@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<!--Software License Agreement
+	(c) 2017 Loogaru, Durkin Andrey
+	This software is under MIT license, so it's FREE
+	FREE as you can feel FREE to DONATE at http://looga.ru
+	Thank you! -->
+<addon scheme="2.0">
+	<id>loogaru_delivery_date</id>
+	<version>1.5</version>
+	<name>[Loogaru] Delivery date</name>
+	<description><![CDATA[Adds order field for delivery date, helps you keep track of upcoming, current and past delivery dates<a target="_blank" href="http://looga.ru/cs-cart_module/delivery-date_add-on/"> View add-on page</a>]]></description>
+	<has_icon>Y</has_icon>
+	<priority>10</priority>
+	<position>0</position>
+	<status>active</status>
+	<auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+
+	<settings edition_type="ROOT,ULT:VENDOR">
+        <sections>
+            <section id="date">
+            	<name>Date</name>
+            		<translations>
+            			<item lang="ru">Дата</item>
+						<item lang="es">fecha</item>
+						<item lang="it">Data</item>
+						<item lang="de">Datum</item>
+						<item lang="sr">Датум</item>
+					</translations>
+                <items>
+					<item id="date_for">
+						<type>multiple checkboxes</type>
+						<name>Settable by customer for</name>
+						<translations>
+                            <item lang="ru">Устанавливается покупателем для</item>
+							<item lang="es">Especifica por el cliente para</item>
+							<item lang="it">Impostabile dal cliente per</item>
+							<item lang="de">Einstellbar durch den Kunden für</item>
+							<item lang="sr">Подесива од стране корисника за</item>
+                        </translations>
+						<variants/>
+                    </item>
+
+					<item id="disabled_days">
+						<type>multiple checkboxes</type>
+						<name>Disabled days</name>
+						<translations>
+                            <item lang="ru">Запрещённые дни</item>
+                        </translations>
+						<variants>
+                            <item id="1">
+                                <name>Monday</name>
+                                <translations>
+                                    <item lang="ru">Понедельник</item>
+                                </translations>
+                            </item>
+                            <item id="2">
+                                <name>Tuesday</name>
+                                <translations>
+                                    <item lang="ru">Вторник</item>
+                                </translations>
+                            </item>
+                            <item id="3">
+                                <name>Wednesday</name>
+                                <translations>
+                                    <item lang="ru">Среда</item>
+                                </translations>
+                            </item>
+                            <item id="4">
+                                <name>Thursday</name>
+                                <translations>
+                                    <item lang="ru">Четверг</item>
+                                </translations>
+                            </item>
+                            <item id="5">
+                                <name>Friday</name>
+                                <translations>
+                                    <item lang="ru">Пятница</item>
+                                </translations>
+                            </item>
+                            <item id="6">
+                                <name>Saturday</name>
+                                <translations>
+                                    <item lang="ru">Суббота</item>
+                                </translations>
+                            </item>
+                            <item id="7">
+                                <name>Sunday</name>
+                                <translations>
+                                    <item lang="ru">Воскресенье</item>
+                                </translations>
+                            </item>
+                        </variants>
+                    </item>
+                    <item id="disabled_dates">
+						<type>input</type>
+						<name>Disabled dates</name>
+						<tooltip>Syntax e.g.: [2017,12,30], [2017,12,31]</tooltip>
+						<translations>
+                            <item lang="ru">Запрещённые даты</item>
+                            <item lang="ru" for="tooltip">Пример синтаксиса: [2017,12,30], [2017,12,31]</item>
+                        </translations>
+						<variants/>
+                    </item>
+                    <item id="deadline">
+						<type>input</type>
+						<name>Deadline for today delivery (0-23)</name>
+						<tooltip>E.g.: you set it to 13, then if customer places order at 13:00 or later, the closest delivery date he can select is tomorrow, but not today.</tooltip>
+						<translations>
+                            <item lang="ru">Дэдлайн для доставки на сегодня (0-23)</item>
+                            <item lang="ru" for="tooltip">Если указать 13, то покупатель, оформляющий заказ в 13:00 или позже, может устновить ближайшей датой заказа лишь завтрашний день, но не сегодняшний.</item>
+                        </translations>
+						<variants/>
+                    </item>
+                </items>
+            </section>
+            <section id="time">
+            	<name>Time</name>
+            		<translations>
+            			<item lang="ru">Время</item>
+						<item lang="es">Hora</item>
+						<item lang="it">Tempo</item>
+						<item lang="de">Zeit</item>
+						<item lang="sr">Време</item>
+					</translations>
+                <items>
+                    <item id="show_time">
+						<type>checkbox</type>
+						<name>Enable</name>
+						<translations>
+                            <item lang="ru">Включить</item>
+							<item lang="es">Habilitar</item>
+							<item lang="it">Abilita</item>
+							<item lang="de">Aktivieren</item>
+							<item lang="sr">Омогућите</item>
+                        </translations>
+						<variants/>
+                    </item>
+					<item id="time_for">
+						<type>multiple checkboxes</type>
+						<name>Settable by customer for</name>
+						<translations>
+                            <item lang="ru">Устанавливается покупателем для</item>
+							<item lang="es">Especifica por el cliente para</item>
+							<item lang="it">Impostabile dal cliente per</item>
+							<item lang="de">Einstellbar durch den Kunden für</item>
+							<item lang="sr">Подесива од стране корисника за</item>
+                        </translations>
+						<variants/>
+                    </item>
+
+                    <item id="time_min">
+						<type>input</type>
+						<name>From (hours,minutes)</name>
+						<default_value>8,0</default_value>
+						<translations>
+                            <item lang="ru">С (часов,минут)</item>
+                            </translations>
+						<variants/>
+                    </item>
+
+                    <item id="time_max">
+						<type>input</type>
+						<name>To (hours,minutes)</name>
+						<default_value>20,0</default_value>
+						<translations>
+                            <item lang="ru">До (часов,минут)</item>
+                        </translations>
+						<variants/>
+                    </item>
+                    <item id="time_step">
+						<type>input</type>
+						<name>Step in minutes</name>
+						<default_value>60</default_value>
+						<tooltip>Set 60 and there will be only hours, seting 30 adds half-hour intervals.</tooltip>
+						<translations>
+                            <item lang="ru">Шаг в минутах</item>
+                            <item lang="ru" for="tooltip">60 - только часы, 30 - добавляются получасовые интервалы.</item>
+                        </translations>
+						<variants/>
+                    </item>
+
+                </items>
+            </section>
+            <section id="time_periods">
+            	<name>Time intervals</name>
+            		<translations>
+                        <item lang="ru">Временные интервалы</item>
+						<item lang="es">Intervalos de tiempo</item>
+						<item lang="it">Intervalli di tempo</item>
+						<item lang="de">Zeitintervalle</item>
+						<item lang="sr">Временским интервалима</item>
+                    </translations>
+                <items>
+                    <item id="show_time_periods">
+						<type>checkbox</type>
+						<name>Enable</name>
+						<translations>
+                            <item lang="ru">Включить</item>
+							<item lang="es">Habilitar</item>
+							<item lang="it">Abilita</item>
+							<item lang="de">Aktivieren</item>
+							<item lang="sr">Омогућите</item>
+                        </translations>
+						<variants/>
+                    </item>
+					<item id="time_periods_for">
+						<type>multiple checkboxes</type>
+						<name>Settable by customer for</name>
+						<translations>
+                            <item lang="ru">Устанавливается покупателем для</item>
+							<item lang="es">Especifica por el cliente para</item>
+							<item lang="it">Impostabile dal cliente per</item>
+							<item lang="de">Einstellbar durch den Kunden für</item>
+							<item lang="sr">Подесива од стране корисника за</item>
+                        </translations>
+						<variants/>
+                    </item>
+                    <item id="setted_time_periods">
+                        <type>hidden</type>
+                        <default_value>N</default_value>
+                    </item>
+                    <item id="set_time_periods">
+						<type>template</type>
+						<default_value>set_time_periods.tpl</default_value>
+                    </item>
+                </items>
+            </section>
+        </sections>
+    </settings>
+
+	<default_language>en</default_language>
+	<authors>
+		<author>
+			<name>Durkin Andrey</name>
+			<email>andrey@looga.ru</email>
+			<url>http://looga.ru</url>
+		</author>
+	</authors>
+	<supplier>Loogaru</supplier>
+	<supplier_link>http://looga.ru</supplier_link>
+	<compatibility>
+		<core_edition>ULTIMATE,MULTIVENDOR</core_edition>
+	</compatibility>
+	<queries>
+		<item for="install">
+			ALTER TABLE `?:orders`
+			ADD `delivery_date` int(11) unsigned NOT NULL default '0',
+			ADD `delivery_time_period` varchar(128) NOT NULL DEFAULT '';
+		</item>
+		<item for="uninstall">
+			ALTER TABLE `?:orders`
+			DROP `delivery_date`,
+			DROP `delivery_time_period`;
+		</item>
+	</queries>
+	<language_variables>
+		<item lang="ru" id="loogaru_delivery_date">Доставка</item>
+		<item lang="en" id="loogaru_delivery_date">Delivery</item>
+		<item lang="es" id="loogaru_delivery_date">Entrega</item>
+		<item lang="it" id="loogaru_delivery_date">Consegna</item>
+		<item lang="de" id="loogaru_delivery_date">Lieferung</item>
+		<item lang="sr" id="loogaru_delivery_date">Испорука</item>
+		<item lang="tr" id="loogaru_delivery_date">Teslim</item>
+				
+		<item lang="ru" id="loogaru_tomorrow">Завтра</item>
+		<item lang="en" id="loogaru_tomorrow">Tomorrow</item>
+		<item lang="es" id="loogaru_tomorrow">Mañana</item>
+		<item lang="it" id="loogaru_tomorrow">Domani</item>
+		<item lang="de" id="loogaru_tomorrow">Morgen</item>
+		<item lang="sr" id="loogaru_tomorrow">Сутра</item>
+		<item lang="tr" id="loogaru_tomorrow">Yarın</item>
+		
+		<item lang="ru" id="loogaru_today">Сегодня</item>
+		<item lang="en" id="loogaru_today">Today</item>
+		<item lang="es" id="loogaru_today">Hoy</item>
+		<item lang="it" id="loogaru_today">Oggi</item>
+		<item lang="de" id="loogaru_today">Heute</item>
+		<item lang="sr" id="loogaru_today">Данас</item>
+		<item lang="tr" id="loogaru_today">Bugün</item>
+
+		<item lang="ru" id="loogaru_asterisk">* Дата должна быть подтверждена менеджером.</item>
+		<item lang="en" id="loogaru_asterisk">* Date must be confirmed by manager.</item>
+		<item lang="es" id="loogaru_asterisk">* La fecha debe ser confirmada por el gerente.</item>
+		<item lang="it" id="loogaru_asterisk">* La data deve essere confermata dal manager.</item>
+		<item lang="de" id="loogaru_asterisk">* Datum muss vom Manager bestätigt werden.</item>
+		<item lang="sr" id="loogaru_asterisk">* Датум мора бити потврђена менаџер.</item>
+		<item lang="tr" id="loogaru_asterisk">* Tarih, yönetici tarafından onaylanmalıdır.</item>
+	</language_variables>
+	<translations>
+		<item for="name" lang="ru">[Loogaru] Дата доставки</item>
+		<item for="description" lang="ru"><![CDATA[Добавляет к заказу поле даты доставки, помогает вести учёт грядущих, актуальных и прошедших дат доставки<a target="_blank" href="http://looga.ru/cs-cart_module/delivery-date_add-on/"> Открыть страницу модуля</a>]]></item>
+	</translations>
+</addon>

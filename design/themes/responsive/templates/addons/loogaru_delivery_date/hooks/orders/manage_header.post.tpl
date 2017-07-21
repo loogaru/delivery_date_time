@@ -1,0 +1,1 @@
+<th><a class="{$ajax_class}" href="{"`$c_url`&sort_by=delivery_date&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id="pagination_contents">{__("loogaru_delivery_date")}</a>{if $search.sort_by == "delivery_date"}{$sort_sign nofilter}{/if}</th>
